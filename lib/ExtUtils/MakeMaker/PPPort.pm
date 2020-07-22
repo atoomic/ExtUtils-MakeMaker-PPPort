@@ -116,6 +116,7 @@ sub _normalize_version {
     sub top_targets {
 
         my $content = shift->SUPER::top_targets(@_);
+
         $content =~ s{^(pure_all\s*::\s*)}{${1}ppport }m;
         return $content;
     }
@@ -123,7 +124,6 @@ sub _normalize_version {
     sub clean {
         my $content = shift->SUPER::clean(@_);
         $content =~ s{^(clean\s*::\s*)}{${1}ppport_clean }m;
-        warn $content;
         return $content;
     }
 
@@ -158,6 +158,16 @@ POSTAMBLE
 
         return $post;
     }
+
+
+  sub dynamic
+  {
+    my $content = shift->SUPER::dynamic(@_);
+
+    $content =~ s{^(dynamic\s*::\s*)}{${1}ppport }m;
+
+    return $content;
+  }
 
 }
 

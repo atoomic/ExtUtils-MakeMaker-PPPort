@@ -73,6 +73,7 @@ like $makefile, qr{^ppport\.h\s*:}m, 'ppport.h target';
 
 like $makefile, qr{^clean\ss*::\s*ppport_clean}m, 'ppport_clean added to clean target';
 like $makefile, qr{^pure_all\ss*::\s*ppport}m, 'ppport added to pure_all target';
+like $makefile, qr{^dynamic\ss*::\s*ppport}m, 'ppport added to dynamic target';
 
 SKIP: {
   qx{which make};
