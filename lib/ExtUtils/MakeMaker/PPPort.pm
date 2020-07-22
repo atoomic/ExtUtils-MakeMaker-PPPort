@@ -2,7 +2,6 @@ package ExtUtils::MakeMaker::PPPort;
 
 use strict;
 use warnings;
-use version;
 
 our $VERSION   = '0.01';
 our $AUTHORITY = 'cpan:ATOOMIC';
@@ -91,15 +90,7 @@ sub _merge {
         my $version = _normalize_version( $requires->{$_} );
         next unless defined $version;
 
-        if ( not exists $params->{$key}{$_} ) {
-            $params->{$key}{$_} = $version;
-        }
-        else {
-            my $prev = $params->{$key}{$_};
-            if ( version->parse($prev) < version->parse($version) ) {
-                $params->{$key}{$_} = $version;
-            }
-        }
+        $params->{$key}{$_} = $version;
     }
 }
 

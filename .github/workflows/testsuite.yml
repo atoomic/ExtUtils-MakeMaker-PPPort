@@ -71,7 +71,6 @@ jobs:
         with:
           install: |
             Test::More
-            version
           sudo: false
       - name: Makefile.PL
         run: perl -I$(pwd) Makefile.PL
