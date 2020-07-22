@@ -46,7 +46,7 @@
          "url" : "https://github.com/atoomic/ExtUtils-MakeMaker-PPPort.git"
       }
    },
-   "version" : "0.01",
+   "version" : "0.02",
    "x_contributors" : [
       "Nicolas R <nicolas@atoomic.org>"
    ],

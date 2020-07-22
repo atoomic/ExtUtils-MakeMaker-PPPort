@@ -3,7 +3,7 @@ package ExtUtils::MakeMaker::PPPort;
 use strict;
 use warnings;
 
-our $VERSION   = '0.01';
+our $VERSION   = '0.02';
 our $AUTHORITY = 'cpan:ATOOMIC';
 
 # ABSTRACT: ExtUtils::MakeMaker when using Devel-PPPort
