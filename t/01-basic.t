@@ -40,10 +40,13 @@ eval {
 MK_END
   }
 
-  { 
-    local $/; 
-    open my $fh, '<', "Makefile.PL"; 
-    note "Makefile.PL:\n", <$fh>;
+  if ( "$]" > 5.010 ) {
+    eval q[     
+      local $/; 
+      open my $fh, '<', "Makefile.PL"; 
+      note "Makefile.PL:\n", <$fh>;
+      1
+    ] or diag $@;
   }
 
   { # generate .pm file
