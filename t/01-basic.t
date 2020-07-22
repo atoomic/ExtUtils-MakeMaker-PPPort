@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-use Test::More tests => 12;
+use Test::More;
 use File::Path;
 use File::Temp qw[tempdir];
 
@@ -90,4 +90,5 @@ SKIP: {
   like $content, qr{_P_P_PORTABILITY_H_}, "ppport.h contains _P_P_PORTABILITY_H_";
 }
 
+done_testing;
 
